@@ -166,6 +166,13 @@ uploads/        Uploaded photo storage
 
 This project uses a local JSON database for beginner-friendly development. For real-world production use, it should be upgraded with a secure database, encrypted passwords, stronger authentication, and proper server deployment.
 
+## Author
+
+```text
+Name: m saiteja
+Email: saitejamulinti@gmail.com
+```
+
 ## About
 
 A child safety tracking system for crowded places with entry registration, 6 digit child codes, help centre search, safe exit verification, admin records, and staff activity tracking.
