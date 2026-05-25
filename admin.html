@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>Tracker</h2>
+    <div class="user-chip">
+      <strong data-user-name></strong>
+      <span data-role-name></span>
+    </div>
+    <nav>
+      <a data-nav="admin" href="admin.html">Admin</a>
+      <a data-nav="worker" href="worker.html">Worker</a>
+      <a data-nav="finder" href="finder.html">Finder</a>
+    </nav>
+    <button class="logout-button" onclick="logout()">Logout</button>
+  </aside>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Admin portal</p>
+        <h1>System Overview</h1>
+      </div>
+    </header>
+
+    <section id="statsGrid" class="stats-grid"></section>
+
+    <section class="dashboard-grid">
+      <div class="panel">
+        <h2>Worker Activity</h2>
+        <div id="workerStats"></div>
+      </div>
+      <div class="panel">
+        <h2>Finder Follow Up</h2>
+        <div id="finderStats"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <h2>Previous Entry Records</h2>
+        <div class="filters">
+          <input id="searchFilter" placeholder="Search code, child, parent, phone">
+          <select id="statusFilter">
+            <option value="all">All</option>
+            <option value="active">Active</option>
+            <option value="found">Found</option>
+            <option value="safe">Safe</option>
+          </select>
+        </div>
+      </div>
+      <div id="recordsTable" class="table-wrap"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

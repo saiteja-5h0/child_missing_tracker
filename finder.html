@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finder Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>Tracker</h2>
+    <div class="user-chip">
+      <strong data-user-name></strong>
+      <span data-role-name></span>
+    </div>
+    <nav>
+      <a data-nav="admin" data-admin-only href="admin.html">Admin</a>
+      <a data-nav="worker" data-admin-only href="worker.html">Worker</a>
+      <a data-nav="finder" href="finder.html">Finder</a>
+    </nav>
+    <button class="logout-button" onclick="logout()">Logout</button>
+  </aside>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Help centre</p>
+        <h1>Find Child Details</h1>
+      </div>
+    </header>
+
+    <section class="panel">
+      <form id="finderForm" class="inline-form">
+        <label>Six digit code<input id="searchId" required maxlength="6" inputmode="numeric" placeholder="123456"></label>
+        <button class="primary-button" type="submit">Search</button>
+      </form>
+      <div class="action-row">
+        <button id="markFoundBtn" class="secondary-button" type="button" disabled>Mark Found</button>
+        <button id="handoverBtn" class="primary-button" type="button" disabled>Hand Over Safely</button>
+      </div>
+      <div id="result"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

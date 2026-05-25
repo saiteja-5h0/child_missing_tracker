@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Child Missing Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="portal-page">
+  <main class="portal-container">
+    <section class="portal-intro">
+      <p class="eyebrow">Crowd safety system</p>
+      <h1>Child Missing Tracker</h1>
+      <p>Choose a portal to register children, verify safe exit, or help a child return to their parents.</p>
+    </section>
+
+    <section class="portal-cards" aria-label="Portal selection">
+      <button class="portal" onclick="selectRole('admin')">
+        <span>Admin</span>
+        <small>Reports, records, staff work</small>
+      </button>
+      <button class="portal" onclick="selectRole('worker')">
+        <span>Worker</span>
+        <small>Entry details and safe exit</small>
+      </button>
+      <button class="portal" onclick="selectRole('finder')">
+        <span>Finder</span>
+        <small>Help centre child lookup</small>
+      </button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

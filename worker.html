@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worker Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>Tracker</h2>
+    <div class="user-chip">
+      <strong data-user-name></strong>
+      <span data-role-name></span>
+    </div>
+    <nav>
+      <a data-nav="admin" data-admin-only href="admin.html">Admin</a>
+      <a data-nav="worker" href="worker.html">Worker</a>
+      <a data-nav="finder" data-admin-only href="finder.html">Finder</a>
+      <button data-worker-tab="entry" class="nav-button" onclick="showWorkerPanel('entry')">Entry Details</button>
+      <button data-worker-tab="exit" class="nav-button" onclick="showWorkerPanel('exit')">Safe Exit</button>
+    </nav>
+    <button class="logout-button" onclick="logout()">Logout</button>
+  </aside>
+
+  <main class="main">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Worker portal</p>
+        <h1>Entry and Safe Exit</h1>
+      </div>
+    </header>
+
+    <section data-worker-panel="entry" class="panel">
+      <h2>Family Entry Details</h2>
+      <form id="entryForm">
+        <div class="form-grid">
+          <label>Father name<input id="fatherName" required placeholder="Father full name"></label>
+          <label>Mother name<input id="motherName" required placeholder="Mother full name"></label>
+          <label>Phone number<input id="phone" required inputmode="tel" placeholder="Primary phone"></label>
+          <label>Alternate number<input id="alternatePhone" inputmode="tel" placeholder="Optional"></label>
+          <label class="wide">Address<textarea id="address" required placeholder="Full address"></textarea></label>
+          <label>Entry gate<input id="entryGate" required placeholder="Gate A"></label>
+          <label>Father photo<input id="fatherPhoto" type="file" accept="image/*"></label>
+          <label>Mother photo<input id="motherPhoto" type="file" accept="image/*"></label>
+        </div>
+
+        <div class="section-heading">
+          <h3>Children</h3>
+          <button class="secondary-button" type="button" onclick="addChildField()">Add Child</button>
+        </div>
+        <div id="childrenContainer"></div>
+
+        <button class="primary-button" type="submit">Generate Codes</button>
+      </form>
+      <div id="generatedCodes"></div>
+    </section>
+
+    <section data-worker-panel="exit" class="panel" hidden>
+      <h2>Safe Exit Verification</h2>
+      <form id="exitForm" class="inline-form">
+        <label>Six digit code<input id="exitCode" required maxlength="6" inputmode="numeric" placeholder="123456"></label>
+        <button class="primary-button" type="submit">Check</button>
+      </form>
+      <div id="exitResult"></div>
+      <button id="confirmExitBtn" class="primary-button" type="button" disabled>Confirm Safe Exit</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
